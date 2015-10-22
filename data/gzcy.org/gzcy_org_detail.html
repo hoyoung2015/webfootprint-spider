@@ -1,0 +1,394 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta property="wb:webmaster" content="5eea2e27f66b0ea9" />
+    <meta property="qc:admins" content="151121502457213636375" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="环评公众参与网,环评公众参与地图" />
+    <meta name="Description" content="环评信息公众平台" />
+    <title>环评公众参与网</title>
+    <link type="text/css" rel="stylesheet" href="http://www.gzcy.org/statics/css/huanbao/style.css"/>
+    <!-- 后台header的css -->
+    <link href="http://www.gzcy.org/statics/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.gzcy.org/statics/css/SYS_STYLE-system.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.gzcy.org/statics/css/table_form.css" rel="stylesheet" type="text/css" />
+    <!-- css导入结束 -->
+    <script type="text/javascript" src="http://www.gzcy.org/statics/js/huanbao/jquery-1.7.2.min.js"></script>
+
+    <link href="http://www.gzcy.org/statics/js/wiyoo/tbox/box.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://www.gzcy.org/statics/js/wiyoo/common.js"></script>
+    <script type="text/javascript" src="http://www.gzcy.org/statics/js/wiyoo/tbox/box.js"></script>
+
+    <script type="text/javascript" src="http://www.gzcy.org/statics/js/huanbao/wiyoo-huanbao.js"></script>
+
+    <!--[if ie 6]>
+    <link rel="stylesheet" href="http://www.gzcy.org/statics/css/huanbao/ie6.css">
+    <script src="http://www.gzcy.org/statics/js/huanbao/pngobject.js"></script>
+    <![endif]-->
+</head>
+<script type="text/javascript">
+    document.onkeydown = function (e) {
+        e=window.event||e;
+        var key = e.keyCode;
+        if (key == 116){
+            var nowurl = window.location.href;
+            window.location.href=nowurl;
+            return false;
+        }
+    }
+</script>
+<script type="text/javascript">
+    function wxgz(){
+
+    }
+</script>
+<style>
+    .black_overlay{
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        z-index:1001;
+        margin-left:434px;
+    }
+</style>
+<body>
+<!--头部开始-->
+
+<div class="header" >
+    <div class="htop">
+        <div class="wrap clearfix c666">
+            <div class="welcome fl"><a href="?m=home&c=article&a=sys_article&id=2">关于我们</a><a href="?m=home&c=notice&a=init">通知公告</a><a href="?m=home&c=expert_member&a=init">专家会员</a></div>
+            <div class="loginway fr">
+
+                <a href="?m=home&c=homepublic&a=login&style=1">登录</a>
+                <a href="?m=home&c=homepublic&a=register&count=1">注册</a>
+                <a href="index.php?m=home&c=homepublic&a=other_login&other_oauth=sina"><img src="http://www.gzcy.org/statics/images/huanbao/login-xw.jpg" />微博登录</a>
+                <a href="index.php?m=home&c=homepublic&a=other_login&other_oauth=qq"><img src="http://www.gzcy.org/statics/images/huanbao/login-qq.jpg" />QQ登录</a>
+                <a href="index.php?m=home&c=homepublic&a=other_login&other_oauth=tqq"><img src="http://www.gzcy.org/statics/images/huanbao/login-tw.jpg" />腾讯微博</a>
+                <a href="#" onclick="document.getElementById('fade').style.display='block';"><img style="width: 20px;" src="http://www.gzcy.org/statics/images/huanbao/weixin.jpg" />微信公众账号</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo-search wrap clearfix">
+        <a href="index.php" class="logo fl"><img src="http://www.gzcy.org/statics/images/huanbao/logo.jpg" title="环评公测网" alt="环评公测网"/></a>
+        <form class="fl clearfix searchform" style="*margin-bottom:5px; position:relative;">
+            <img src="http://www.gzcy.org/statics/images/huanbao/search-logo.jpg" class="fl search-logo"/>
+            <div class="inulbox clearfix fl">
+                <input type="text" class="input-focus" id="searchEiaText" value="" style="float:left;"/>
+                <div class="fl stype" id="chooseType">
+                    <a href="javascript:viod(0);" class="typetext">环评项目</a><b></b>
+                    <ul class="lsn" style="top:26px;">
+                        <li><a href="javascript:viod(0);">环评项目</a></li>
+                        <li><a href="javascript:viod(0);">环评单位</a></li>
+                    </ul>
+                </div>
+            </div>
+            <input type="button"  class="insub fl" value="搜索" onclick="searchEiaName()" />
+            <div style="clear:both;"></div>
+            <p class="hotkeyword c069" style="margin-top:0px; padding-left:36px;">热门搜索：<a href="?m=home&c=index&a=init&key=路">路</a><a href="?m=home&c=index&a=init&key=煤">煤</a><a href="?m=home&c=index&a=init&key=油">油</a><a href="?m=home&c=index&a=init&key=化工">化工</a><a href="?m=home&c=index&a=init&key=药">药</a><a href="?m=home&c=index&a=init&key=垃圾">垃圾</a><a href="?m=home&c=index&a=init&key=改建">改建</a><a href="?m=home&c=index&a=init&key=扩建">扩建</a><a href="?m=home&c=index&a=init&key=固废">固废</a>        </p>
+            <div style="position:absolute;left:350px;top:-25px;">
+                <a onclick="document.getElementById('fade').style.display='block';"><img style="width: 81px;padding-left:155px;" src="http://www.gzcy.org/statics/images/huanbao/wxgz.jpg" alt="微信公众账号" /></a>
+            </div>
+            <div id="fade" class="black_overlay">
+                <img style="width: 250px;" src="http://www.gzcy.org/statics/images/huanbao/wxgz.jpg"  /><img onclick="document.getElementById('fade').style.display='none';" style="width: 30px; margin-top: -200px;" src="http://www.gzcy.org/statics/images/huanbao/guanbi.jpg"  />
+                <div style="background-color:#FFAB2D;width:250px;text-align:center;font:16px;">微信公众账号:hp_gzcy</div>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="navlist clearfix">
+        <div class="navleftbg"></div><div class="navrightbg"></div>
+        <div class="wrap">
+            <ul class="lsn fl navleft cfff clearfix">
+                <li><a href="index.php">首页</a></li>
+                <li><a href="?m=home&c=index&a=lists">环评项目</a></li>
+                <li><a href="?m=home&c=unit&a=lists">环评单位</a></li>
+                <li><a href="?m=home&c=article&a=init">环评新闻</a></li>
+                <li><a href="?m=home&c=member&a=complain">投诉通道</a></li>
+                <li class="custom_sun_index"><a href="?m=home&c=member&a=book">环评订阅<img src="http://www.gzcy.org/statics/images/huanbao/jtright.gif" /></a></li>
+            </ul>
+            <img src="http://www.gzcy.org/statics/images/huanbao/navfjx.jpg" class="fl"/>
+            <div class="tomap fl navright"><a href="index.php">环评项目地图</a><a href="?m=home&c=unit&a=init">环评单位地图</a><a href="?m=home&c=depart&a=init">审批部门地图</a></div>
+        </div>
+    </div>
+</div>
+<!--头部结束--><script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=E992663d88a075d66098bbd72ba20805"></script>
+<script type="text/javascript">
+    function LookInfo(val){
+        //ui.box.load("index.php?m=home&c=unit&a=info_window&id="+val,{title:"环评单位",height:158,width:410});
+    }
+</script>
+<!--内容部分开始-->
+<div class="container">
+    <div class="wrap clearfix">
+        <p class="position c333">当前位置：<a href="index.php">首页</a> > <a href="?m=home&c=unit&a=lists">环评单位列表</a> > <a>江苏国恒安全评价咨询服务有限公司</a></p>
+        <div class="hpdet_description">
+            <div class="hpcompany_name">江苏国恒安全评价咨询服务有限公司</div>
+            <div class="hpcompany_det">
+                <p>证书等级：乙级&nbsp;&nbsp;&nbsp;证书编号：1992&nbsp;&nbsp;&nbsp;地址：江苏&nbsp;南京&nbsp;建邺区&nbsp;南京市建邺区湖西街8-2号</p>
+                <p>评价范围：一般项目环境影响报告表&nbsp;&nbsp;&nbsp;轻工纺织化纤（乙级）&nbsp;&nbsp;&nbsp;化工石化医药（乙级）&nbsp;&nbsp;&nbsp;社会区域（乙级）&nbsp;&nbsp;&nbsp;</p>
+                <p>联系方式：025-86557119&nbsp;&nbsp;&nbsp;&nbsp;邮箱：</p>
+            </div>
+        </div>
+
+
+        <div class="listtip clearfix c333">
+            <span class="fl span1">环评项目</span>
+            <div class="fr">
+                <span class="span2">共 1 条记录</span><span class="span3">1/1</span><a href="" class="prev"></a><a href="" class="next"></a>
+            </div>
+        </div>
+        <div class="hphover c333">
+            <a href="?m=home&c=unit&a=info&id=1182" class="selecton">全部</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=46">规划环评</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=45">核与辐射</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=44">社会事业与服务业</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=42">城市交通设施</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=41">水运</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=40">民航机场</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=39">铁路</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=38">公路</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=37">纺织化纤</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=36">轻工</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=35">医药</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=34">石化、化工</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=33">机械、电子</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=32">非金属矿采选及制品制造</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=31">金属制品</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=30">有色金属</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=29">黑色金属</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=28">电力</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=24">石油、天然气</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=9">煤炭</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=8">地质勘查</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=7">农、林、牧、渔</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=43">城市基础设施及房地产</a>
+            <a href="?m=home&c=unit&a=info&id=1182&cat_id=6">水利</a>
+        </div>
+
+        <table width="100%" class="listbox">
+            <tr>
+                <td class="td1">
+                    <dl class="clearfix">
+                        <dt class="dt1">1</dt>
+                        <dd class="c666">
+                            <p class="p1"><a href="?m=home&c=index&a=info&id=38670">南京宁昆再生资源有限公司包装桶干式清洗（18万只/年）技改扩产项目</a></p>
+                            <p class="p2">江苏&nbsp;南京&nbsp;栖霞区&nbsp;南京市栖霞区龙潭街道太平村</p>
+                        </dd>
+                    </dl>
+                </td>
+                <td class="td2 c333">
+                    <a href="?m=home&c=index&a=info&id=38670&type=1">一次公示</a>&nbsp;                                                                                                </td>
+                <td class="td3"><a href="?m=home&c=index&a=info&id=38670">查看详细</a></td>
+            </tr>
+        </table>
+
+        <div class="listtip clearfix c333">
+            <span class="fl span1">证书持证人员</span>
+        </div>
+        <table width="100%">
+            <thead>
+            <tr>
+                <th class="hphover " width="20%" align="center">姓名</th>
+                <th class="hphover " width="20%" align="center">岗位证书号</th>
+                <th class="hphover " width="60%" align="center">所在单位</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="listtip clearfix c333">
+            <span class="fl span1">环境影响评价工程师 </span>
+        </div>
+        <table width="100%">
+            <thead>
+            <tr>
+                <th class="hphover " width="15%" align="center">姓名</th>
+                <th class="hphover " width="10%" align="center">岗位证书号</th>
+                <th class="hphover " align="left">登记单位</th>
+                <th class="hphover " align="left">登记类别</th>
+                <th class="hphover " width="7%" align="center">登记有效期起始日期</th>
+                <th class="hphover " width="7%" align="center">登记有效期结束日期</th>
+                <th class="hphover " width="8%" align="center">职业资格证书</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="pages">
+            <ul>
+            </ul>
+        </div>
+
+        <div class="hp_bot">
+            <div class="site_map">
+                <div class="hp_line">
+                    <hr />
+                    <div class="left_bold fix_point">地理位置</div>
+                </div>
+                <div class="hpmap" id="container" style="width:499px; height:273px;"></div>
+            </div>
+            <div class="weigui_log">
+                <div class="weigui_line">
+                    <hr />
+                    <div class="left_bold fix_point">违规记录</div>
+                    <div class="show_more">
+                        <a href="?m=home&c=article&a=record&eia_unit_id=1182">查看更多 >> </a>
+                    </div>
+                </div>
+                <div class="loglist">
+                    <ul>
+                        <li>该环评单位暂无违规记录</li>
+                        <div style="clear:both;"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    var map = new BMap.Map("container"); // 创建地图实例
+    map.centerAndZoom(new BMap.Point(118.757808,32.038182),13);
+    map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+    map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT}));
+    map.addControl(new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]}));
+    map.enableScrollWheelZoom();
+    map.enableContinuousZoom();
+    // 复杂的自定义覆盖物
+    function ComplexCustomOverlay(point, text, mouseoverText,id,type){
+        this._point = point;
+        this._text = text;
+        this._overText = mouseoverText;
+        this._hpid = id;
+        this._hptype = type;
+    }
+    ComplexCustomOverlay.prototype = new BMap.Overlay();
+    ComplexCustomOverlay.prototype.initialize = function(map){
+        this._map = map;
+        var div = this._div = document.createElement("div");
+        //div.setAttribute("onclick","LookInfo("+this._hpid+")");
+        div.onclick=function(){LookInfo(that._hpid);};
+        div.setAttribute("tag",this._hptype);
+        div.style.position = "absolute";
+        div.style.cursor = "pointer";
+        div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+        if(this._hptype == 1)
+        {
+            div.style.background = "url('../statics/js/map/images/bg.png') repeat-x";
+        }else if(this._hptype > 1){
+            div.style.background = "url('../statics/js/map/images/bg22.png') repeat-x";
+        }else{
+            div.style.background = "url('../statics/js/map/images/bg21.png') repeat-x";
+        }
+        div.style.zIndex = "1";
+        if(this._hptype == 1)
+        {
+            div.style.borderLeft = "1px solid #1b8bee";
+            div.style.borderRight = "1px solid #1b8bee";
+        }else if(this._hptype > 1){
+            div.style.borderLeft = "1px solid #cc2538";
+            div.style.borderRight = "1px solid #cc2538";
+        }else{
+            div.style.borderLeft = "1px solid #35923a";
+            div.style.borderRight = "1px solid #35923a";
+        }
+        div.style.borderRadius = "4px";
+        div.style.color = "white";
+        div.style.height = "27px";
+        div.style.paddingLeft = "8px";
+        div.style.paddingRight = "8px";
+        div.style.lineHeight = "27px";
+        div.style.whiteSpace = "nowrap";
+        div.style.MozUserSelect = "none";
+        div.style.fontSize = "12px"
+        var span = this._span = document.createElement("span");
+        div.appendChild(span);
+        span.appendChild(document.createTextNode(this._text));
+        var that = this;
+
+        var arrow = this._arrow = document.createElement("div");
+
+        if(this._hptype == 1)
+        {
+            arrow.style.background = "url('../statics/js/map/images/lable.png') no-repeat";
+        }else if(this._hptype > 1){
+            arrow.style.background = "url('../statics/js/map/images/lable3.png') repeat-x";
+        }else{
+            arrow.style.background = "url('../statics/js/map/images/lable2.png') repeat-x";
+        }
+        arrow.style.position = "absolute";
+        arrow.style.width = "19px";
+        arrow.style.height = "12px";
+        arrow.style.top = "26px";
+        arrow.style.left = "10px";
+        arrow.style.overflow = "hidden";
+        div.appendChild(arrow);
+
+        div.onmouseover = function(){
+            this.style.zIndex = "2";
+            this.style.background = "url('../statics/js/map/images/bg2.png') repeat-x";
+            this.style.borderColor = "#e07903";
+            this.getElementsByTagName("span")[0].innerHTML = that._overText;
+            arrow.style.backgroundPosition = "0px -13px";
+        }
+
+        div.onmouseout = function(){
+            this.style.zIndex = "1";
+            if(this.getAttribute("tag") == 1)
+            {
+                this.style.background = "url('../statics/js/map/images/bg.png') repeat-x";
+                this.style.borderColor = "#1b8bee";
+            }else if(this.getAttribute("tag") > 1){
+                this.style.background = "url('../statics/js/map/images/bg22.png') repeat-x";
+                this.style.borderColor = "#cc2538";
+            }else{
+                this.style.background = "url('../statics/js/map/images/bg21.png') repeat-x";
+                this.style.borderColor = "#35923a";
+            }
+            this.getElementsByTagName("span")[0].innerHTML = that._text;
+            arrow.style.backgroundPosition = "0px 0px";
+        }
+
+        map.getPanes().labelPane.appendChild(div);
+
+        return div;
+    }
+    ComplexCustomOverlay.prototype.draw = function(){
+        var map = this._map;
+        var pixel = map.pointToOverlayPixel(this._point);
+        this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
+        this._div.style.top  = pixel.y - 30 + "px";
+    }
+    var txtSun = '江苏国恒安全评价咨询服务有限公司';
+    var myCompOverlay = new ComplexCustomOverlay(new BMap.Point(118.757808,32.038182),txtSun,txtSun,1182,0);
+    map.addOverlay(myCompOverlay);
+</script>
+<!--内容部分结束-->
+<!--脚部开始-->
+<div class="footer c666">
+    <div class="wrap clearfix">
+        <div class="fl">
+            <p>客服电话：15723012329</p>
+            <p>访问统计：10749754</p>
+        </div>
+        <div class="fl" style="margin-left:20px;"><img title="网警备案" height="48" src="http://www.gzcy.org/statics/images/huanbao/jing.png" alt="网警备案"/></div>
+        <div class="fr">
+            <p>© 2013-2023 环评公众参与网版权所有，并保留所有权利&nbsp;&nbsp;渝ICP备13003556号</p>
+            <p>技术支持：<a href="http://www.wiyoo.cn">南京微云信息科技有限公司</a><script src="http://s11.cnzz.com/stat.php?id=5931879&web_id=5931879" language="JavaScript"></script></p>
+        </div>
+    </div>
+</div>
+<!--脚步结束-->
+</body>
+</html>
