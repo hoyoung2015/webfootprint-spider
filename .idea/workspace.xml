@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42d0b61d-80fc-4980-a9e3-fea271a8d78f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/sql/green_org20151022.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="envir-spider.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,6 +83,7 @@
         <option value="$PROJECT_DIR$/src/main/java/net/hoyoung/spider/gzcy/org/GzcyOrgDetailSpider.java" />
         <option value="$PROJECT_DIR$/data/gzcy.org/gzcy_org_detail.html" />
         <option value="$PROJECT_DIR$/src/main/java/net/hoyoung/spider/gzcy/org/HtmlDetailParser.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -563,7 +565,7 @@
       <created>1445519334522</created>
       <option name="number" value="Default" />
       <updated>1445519334522</updated>
-      <workItem from="1445519340600" duration="8480000" />
+      <workItem from="1445519340600" duration="8566000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1445527727054</created>
@@ -575,7 +577,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8480000" />
+    <option name="totallyTimeSpent" value="8566000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="0" width="1346" height="728" extended-state="0" />
@@ -734,6 +736,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="20" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
           <folding />
         </state>
       </provider>
