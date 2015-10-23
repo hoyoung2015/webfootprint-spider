@@ -46,16 +46,16 @@ public class GzcyOrgSpider implements PageProcessor {
             String city = addrs[1];
             String area = addrs[2];
             String cert_level = null;
-            String cert_num = null;
+            String cert_no = null;
             String t_cert = tr.xpath("//td[2]/text()").get();
             if(!StringUtils.isEmpty(t_cert)){
                 Matcher m = certPattern.matcher(t_cert);
                 if(m.find()){
                     cert_level = m.group(1);
-                    cert_num = m.group(2);
+                    cert_no = m.group(2);
                 }
             }
-            int status = jdbcTemplate.update("INSERT INTO gzcy_org(id,name,province,city,area,addr,cert_level,cert_num) VALUES (?,?,?,?,?,?,?,?)",
+            int status = jdbcTemplate.update("INSERT INTO gzcy_org(id,name,province,city,area,addr,cert_level,cert_no) VALUES (?,?,?,?,?,?,?,?)",
                     id,
                     name,
                     province,
@@ -63,7 +63,7 @@ public class GzcyOrgSpider implements PageProcessor {
                     area,
                     addr,
                     cert_level,
-                    cert_num);
+                    cert_no);
             if(status==1){
                 System.out.println(id+"|"+name+" 插入成功");
             }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -117,334 +118,255 @@
         </div>
     </div>
 </div>
-<!--头部结束--><script type="text/javascript">
-    function changeSelects(obj,id)
-    {
-        //$("#"+id).val(value);
-        //$(obj).parent('span').siblings("span").children('a').removeClass("selecton");
-        //$(obj).attr("class","selecton");
-        doSubmitFilter();
-    }
-    function doSubmitFilter()
-    {
-        var province = $("#province").val();
-        var certificate_level   = $("#certificate_level").val();
-        var record_num   = $("#record_num").val();
-        var cat_id   = $("#cat_id").val();
-        var str = '';
-        if(province != '') str += '&province='+province;
-        if(certificate_level != '')     str += '&certificate_level='+certificate_level;
-        if(record_num != '') str += '&record_num='+record_num;
-        if(cat_id != '') str += '&cat_id='+cat_id;
-        window.location.href = '?m=home&c=unit&a=lists'+str;
+<!--头部结束--><script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=E992663d88a075d66098bbd72ba20805"></script>
+<script type="text/javascript">
+    function LookInfo(val){
+        //ui.box.load("index.php?m=home&c=unit&a=info_window&id="+val,{title:"环评单位",height:158,width:410});
     }
 </script>
 <!--内容部分开始-->
 <div class="container">
     <div class="wrap clearfix">
-        <p class="position c333">当前位置：<a href="index.php">首页</a> > <a href="?m=home&c=unit&a=lists">环评单位列表</a></p>
-        <div class="new-select-box c333">
-            <span>省份：</span>
-            <select name="province" onchange="changeSelects(this,'province')" id="province">
-                <option selected value="0">省份</option>
-                <option  value="2">北京</option>
-                <option  value="3">安徽</option>
-                <option  value="4">福建</option>
-                <option  value="5">甘肃</option>
-                <option  value="6">广东</option>
-                <option  value="7">广西</option>
-                <option  value="8">贵州</option>
-                <option  value="9">海南</option>
-                <option  value="10">河北</option>
-                <option  value="11">河南</option>
-                <option  value="12">黑龙江</option>
-                <option  value="13">湖北</option>
-                <option  value="14">湖南</option>
-                <option  value="15">吉林</option>
-                <option  value="16">江苏</option>
-                <option  value="17">江西</option>
-                <option  value="18">辽宁</option>
-                <option  value="19">内蒙古</option>
-                <option  value="20">宁夏</option>
-                <option  value="21">青海</option>
-                <option  value="22">山东</option>
-                <option  value="23">山西</option>
-                <option  value="24">陕西</option>
-                <option  value="25">上海</option>
-                <option  value="26">四川</option>
-                <option  value="27">天津</option>
-                <option  value="28">西藏</option>
-                <option  value="29">新疆</option>
-                <option  value="30">云南</option>
-                <option  value="31">浙江</option>
-                <option  value="32">重庆</option>
-                <option  value="33">香港</option>
-                <option  value="34">澳门</option>
-                <option  value="35">台湾</option>
-            </select>
-            <span>评价范围：</span>
-            <select name="cat_id" onchange="changeSelects(this,'cat_id')" id="cat_id">
-                <option selected value="0">全部</option>
-                <option  value="6">轻工纺织化纤（甲级）</option>
-                <option  value="7">化工石化医药（甲级）</option>
-                <option  value="8">冶金机电（甲级）</option>
-                <option  value="9">建材火电（甲级）</option>
-                <option  value="24">农林水利（甲级）</option>
-                <option  value="28">采掘（甲级）</option>
-                <option  value="29">交通运输（甲级）</option>
-                <option  value="30">社会区域（甲级）</option>
-                <option  value="31">海洋工程（甲级）</option>
-                <option  value="32">输变电及
-                    广电通讯（甲级）</option>
-                <option  value="33">核工业（甲级）</option>
-                <option  value="34">轻工纺织化纤（乙级）</option>
-                <option  value="35">化工石化医药（乙级）</option>
-                <option  value="36">冶金机电（乙级）</option>
-                <option  value="37">建材火电（乙级）</option>
-                <option  value="38">农林水利（乙级）</option>
-                <option  value="39">采掘（乙级）</option>
-                <option  value="40">交通运输（乙级）</option>
-                <option  value="41">社会区域（乙级）</option>
-                <option  value="42">海洋工程（乙级）</option>
-                <option  value="43">输变电及
-                    广电通讯（乙级）</option>
-                <option  value="44">核工业（乙级）</option>
-                <option  value="45">一般项目环境影响报告表</option>
-                <option  value="46">特殊项目环境影响报告表</option>
-            </select>
-            <span>证书等级：</span>
-            <select name="certificate_level" onchange="changeSelects(this,'certificate_level')" id="certificate_level">
-                <option selected value="0">全部</option>
-                <option   value="1">甲级</option>
-                <option   value="2">乙级</option>
-            </select>
-            <span>违规记录：</span>
-            <select name="record_num" onchange="changeSelects(this,'record_num')" id="record_num">
-                <option selected >全部</option>
-                <option  value="1">无</option>
-                <option  value="2">一次</option>
-                <option  value="3">2次及以上</option>
-            </select>
-
-        </div>
-
-        <div class="listtip clearfix c333">
-            <span class="fl span1">环评单位</span>
-            <div class="fr">
-                <span class="span2">共 1174 条记录</span><span class="span3">1/79</span><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=0" class="prev"></a><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=2" class="next"></a>
+        <p class="position c333">当前位置：<a href="index.php">首页</a> > <a href="?m=home&c=unit&a=lists">环评单位列表</a> > <a>定西春晓环境工程有限公司</a></p>
+        <div class="hpdet_description">
+            <div class="hpcompany_name">定西春晓环境工程有限公司</div>
+            <div class="hpcompany_det">
+                <p>证书等级：乙级&nbsp;&nbsp;&nbsp;证书编号：3720&nbsp;&nbsp;&nbsp;地址：甘肃&nbsp;定西&nbsp;安定区&nbsp;定西市</p>
+                <p>评价范围：一般项目环境影响报告表&nbsp;&nbsp;&nbsp;</p>
+                <p>联系方式：&nbsp;&nbsp;&nbsp;&nbsp;邮箱：</p>
             </div>
         </div>
+
+
+        <div class="listtip clearfix c333">
+            <span class="fl span1">环评项目</span>
+            <div class="fr">
+                <span class="span2">共 0 条记录</span><span class="span3">0/1</span><a href="" class="prev"></a><a href="" class="next"></a>
+            </div>
+        </div>
+        <div class="hphover c333">
+            <a href="?m=home&c=unit&a=info&id=1184" class="selecton">全部</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=46">规划环评</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=45">核与辐射</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=44">社会事业与服务业</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=42">城市交通设施</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=41">水运</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=40">民航机场</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=39">铁路</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=38">公路</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=37">纺织化纤</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=36">轻工</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=35">医药</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=34">石化、化工</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=33">机械、电子</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=32">非金属矿采选及制品制造</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=31">金属制品</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=30">有色金属</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=29">黑色金属</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=28">电力</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=24">石油、天然气</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=9">煤炭</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=8">地质勘查</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=7">农、林、牧、渔</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=43">城市基础设施及房地产</a>
+            <a href="?m=home&c=unit&a=info&id=1184&cat_id=6">水利</a>
+        </div>
+
         <table width="100%" class="listbox">
+        </table>
+
+        <div class="listtip clearfix c333">
+            <span class="fl span1">证书持证人员</span>
+        </div>
+        <table width="100%">
+            <thead>
             <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt class="dt1">1</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1188">眉山市益深环保技术有限责任公司</a></p>
-                            <p class="p2">四川&nbsp;眉山&nbsp;彭山县&nbsp;四川眉山彭山县彭溪镇蔡山西路段43号</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：B3252 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1188">查看详细</a></td>
+                <th class="hphover " width="20%" align="center">姓名</th>
+                <th class="hphover " width="20%" align="center">岗位证书号</th>
+                <th class="hphover " width="60%" align="center">所在单位</th>
             </tr>
+            </thead>
+            <tbody>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="listtip clearfix c333">
+            <span class="fl span1">环境影响评价工程师 </span>
+        </div>
+        <table width="100%">
+            <thead>
             <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt class="dt2">2</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1186">松开市政公用局</a></p>
-                            <p class="p2">吉林&nbsp;松原&nbsp;宁江区&nbsp;兴业大街2049号</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：甲级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：GZ14-2576948 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1186">查看详细</a></td>
+                <th class="hphover " width="15%" align="center">姓名</th>
+                <th class="hphover " width="10%" align="center">岗位证书号</th>
+                <th class="hphover " align="left">登记单位</th>
+                <th class="hphover " align="left">登记类别</th>
+                <th class="hphover " width="7%" align="center">登记有效期起始日期</th>
+                <th class="hphover " width="7%" align="center">登记有效期结束日期</th>
+                <th class="hphover " width="8%" align="center">职业资格证书</th>
             </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >3</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1184">定西春晓环境工程有限公司</a></p>
-                            <p class="p2">甘肃&nbsp;定西&nbsp;安定区&nbsp;定西市</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：3720 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1184">查看详细</a></td>
+            </thead>
+            <tbody>
             </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >4</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1183">四川省地质工程勘察院</a></p>
-                            <p class="p2">四川&nbsp;成都&nbsp;青羊区&nbsp;成都市西青路119号</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：3251 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1183">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >5</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1182">江苏国恒安全评价咨询服务有限公司</a></p>
-                            <p class="p2">江苏&nbsp;南京&nbsp;建邺区&nbsp;南京市建邺区湖西街8-2号</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：1992 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1182">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >6</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1181">上海华闵环境科技发展有限公司</a></p>
-                            <p class="p2">上海&nbsp;上海&nbsp;嘉定区&nbsp;上海市金沙路155号1号楼3F</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：1829 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1181">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >7</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1180">内蒙古天皓环境评价有限责任公司</a></p>
-                            <p class="p2">内蒙古&nbsp;呼和浩特&nbsp;新城区&nbsp;赤峰市新城区和美建材成B区19号楼6楼</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：1432 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1180">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >8</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1179">贵州绿宏环保科技有限公司</a></p>
-                            <p class="p2">贵州&nbsp;黔西南&nbsp;兴义市&nbsp;兴义市桔山广场会展中心二楼</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：甲级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：3324 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1179">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >9</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1178">内蒙古博海环境科技有限责任公司</a></p>
-                            <p class="p2">内蒙古&nbsp;呼和浩特&nbsp;赛罕区&nbsp;内蒙古呼和浩特呼和浩特呼伦南路皮革厂昱华大厦B座3楼</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：1434 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1178">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >10</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1177">内蒙古天助环评有限责任公司</a></p>
-                            <p class="p2">内蒙古&nbsp;锡林郭勒盟&nbsp;锡林浩特市&nbsp;团结大街60号</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：1433 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1177">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >11</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1176">浙江冶金环保设计有限公司</a></p>
-                            <p class="p2">浙江&nbsp;杭州&nbsp;西湖区&nbsp;浙江杭州市杭州天目山路18号</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：2011 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1176">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >12</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1175">宁波环科院</a></p>
-                            <p class="p2">浙江&nbsp;宁波&nbsp;江北区&nbsp;宁波市益民街48弄58号</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：甲级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：2004 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1175">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >13</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1174">中环联（北京）环境保护有限公司</a></p>
-                            <p class="p2">北京&nbsp;北京&nbsp;朝阳区&nbsp;北京市朝阳区和平街14区华表大厦605室</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：1058 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1174">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >14</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1173">厦门市新绿色环境发展有限公司</a></p>
-                            <p class="p2">福建&nbsp;厦门&nbsp;思明区&nbsp;厦门市思明区湖滨南路619号SOHO大厦15层</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：2224 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1173">查看详细</a></td>
-            </tr>
-            <tr>
-                <td class="td1">
-                    <dl class="clearfix">
-                        <dt >15</dt>
-                        <dd class="c666">
-                            <p class="p1"><a href="?m=home&c=unit&a=info&id=1172">苏州和协环境评价咨询有限公司</a></p>
-                            <p class="p2">江苏&nbsp;苏州&nbsp;吴中区&nbsp;江苏省苏州市吴中区龙西路257号</p>
-                        </dd>
-                    </dl>
-                </td>
-                <td class="td2 c333">证书等级：乙级 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证书编号：B1986 </td>
-                <td class="td3"><a href="?m=home&c=unit&a=info&id=1172">查看详细</a></td>
-            </tr>
+            </tbody>
         </table>
 
         <div class="pages">
             <ul>
-                <li class="total_num"><a>1174条</a></li><li><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=0"><img src="http://www.gzcy.org/statics/images/huanbao/previous.jpg" /></a></li><li id="this_page"><a>1</a></li><li><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=2">2</a></li><li><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=3">3</a></li><li><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=4">4</a></li><li><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=5">5</a></li><li><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=6">6</a></li> <li><a>...</a></li><li><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=79">79</a></li><li><a href="http://www.gzcy.org/?m=home&c=unit&a=lists&page=2"><img src="http://www.gzcy.org/statics/images/huanbao/next2.jpg" /></a></li>            </ul>
+            </ul>
         </div>
+
+        <div class="hp_bot">
+            <div class="site_map">
+                <div class="hp_line">
+                    <hr />
+                    <div class="left_bold fix_point">地理位置</div>
+                </div>
+                <div class="hpmap" id="container" style="width:499px; height:273px;"></div>
+            </div>
+            <div class="weigui_log">
+                <div class="weigui_line">
+                    <hr />
+                    <div class="left_bold fix_point">违规记录</div>
+                    <div class="show_more">
+                        <a href="?m=home&c=article&a=record&eia_unit_id=1184">查看更多 >> </a>
+                    </div>
+                </div>
+                <div class="loglist">
+                    <ul>
+                        <li>该环评单位暂无违规记录</li>
+                        <div style="clear:both;"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+<script type="text/javascript">
+    var map = new BMap.Map("container"); // 创建地图实例
+    map.centerAndZoom(new BMap.Point(104.626063,35.5877),13);
+    map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+    map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT}));
+    map.addControl(new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]}));
+    map.enableScrollWheelZoom();
+    map.enableContinuousZoom();
+    // 复杂的自定义覆盖物
+    function ComplexCustomOverlay(point, text, mouseoverText,id,type){
+        this._point = point;
+        this._text = text;
+        this._overText = mouseoverText;
+        this._hpid = id;
+        this._hptype = type;
+    }
+    ComplexCustomOverlay.prototype = new BMap.Overlay();
+    ComplexCustomOverlay.prototype.initialize = function(map){
+        this._map = map;
+        var div = this._div = document.createElement("div");
+        //div.setAttribute("onclick","LookInfo("+this._hpid+")");
+        div.onclick=function(){LookInfo(that._hpid);};
+        div.setAttribute("tag",this._hptype);
+        div.style.position = "absolute";
+        div.style.cursor = "pointer";
+        div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+        if(this._hptype == 1)
+        {
+            div.style.background = "url('../statics/js/map/images/bg.png') repeat-x";
+        }else if(this._hptype > 1){
+            div.style.background = "url('../statics/js/map/images/bg22.png') repeat-x";
+        }else{
+            div.style.background = "url('../statics/js/map/images/bg21.png') repeat-x";
+        }
+        div.style.zIndex = "1";
+        if(this._hptype == 1)
+        {
+            div.style.borderLeft = "1px solid #1b8bee";
+            div.style.borderRight = "1px solid #1b8bee";
+        }else if(this._hptype > 1){
+            div.style.borderLeft = "1px solid #cc2538";
+            div.style.borderRight = "1px solid #cc2538";
+        }else{
+            div.style.borderLeft = "1px solid #35923a";
+            div.style.borderRight = "1px solid #35923a";
+        }
+        div.style.borderRadius = "4px";
+        div.style.color = "white";
+        div.style.height = "27px";
+        div.style.paddingLeft = "8px";
+        div.style.paddingRight = "8px";
+        div.style.lineHeight = "27px";
+        div.style.whiteSpace = "nowrap";
+        div.style.MozUserSelect = "none";
+        div.style.fontSize = "12px"
+        var span = this._span = document.createElement("span");
+        div.appendChild(span);
+        span.appendChild(document.createTextNode(this._text));
+        var that = this;
+
+        var arrow = this._arrow = document.createElement("div");
+
+        if(this._hptype == 1)
+        {
+            arrow.style.background = "url('../statics/js/map/images/lable.png') no-repeat";
+        }else if(this._hptype > 1){
+            arrow.style.background = "url('../statics/js/map/images/lable3.png') repeat-x";
+        }else{
+            arrow.style.background = "url('../statics/js/map/images/lable2.png') repeat-x";
+        }
+        arrow.style.position = "absolute";
+        arrow.style.width = "19px";
+        arrow.style.height = "12px";
+        arrow.style.top = "26px";
+        arrow.style.left = "10px";
+        arrow.style.overflow = "hidden";
+        div.appendChild(arrow);
+
+        div.onmouseover = function(){
+            this.style.zIndex = "2";
+            this.style.background = "url('../statics/js/map/images/bg2.png') repeat-x";
+            this.style.borderColor = "#e07903";
+            this.getElementsByTagName("span")[0].innerHTML = that._overText;
+            arrow.style.backgroundPosition = "0px -13px";
+        }
+
+        div.onmouseout = function(){
+            this.style.zIndex = "1";
+            if(this.getAttribute("tag") == 1)
+            {
+                this.style.background = "url('../statics/js/map/images/bg.png') repeat-x";
+                this.style.borderColor = "#1b8bee";
+            }else if(this.getAttribute("tag") > 1){
+                this.style.background = "url('../statics/js/map/images/bg22.png') repeat-x";
+                this.style.borderColor = "#cc2538";
+            }else{
+                this.style.background = "url('../statics/js/map/images/bg21.png') repeat-x";
+                this.style.borderColor = "#35923a";
+            }
+            this.getElementsByTagName("span")[0].innerHTML = that._text;
+            arrow.style.backgroundPosition = "0px 0px";
+        }
+
+        map.getPanes().labelPane.appendChild(div);
+
+        return div;
+    }
+    ComplexCustomOverlay.prototype.draw = function(){
+        var map = this._map;
+        var pixel = map.pointToOverlayPixel(this._point);
+        this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
+        this._div.style.top  = pixel.y - 30 + "px";
+    }
+    var txtSun = '定西春晓环境工程有限公司';
+    var myCompOverlay = new ComplexCustomOverlay(new BMap.Point(104.626063,35.5877),txtSun,txtSun,1184,0);
+    map.addOverlay(myCompOverlay);
+</script>
 <!--内容部分结束-->
 <!--脚部开始-->
 <div class="footer c666">
     <div class="wrap clearfix">
         <div class="fl">
             <p>客服电话：15723012329</p>
-            <p>访问统计：10748254</p>
+            <p>访问统计：10771863</p>
         </div>
         <div class="fl" style="margin-left:20px;"><img title="网警备案" height="48" src="http://www.gzcy.org/statics/images/huanbao/jing.png" alt="网警备案"/></div>
         <div class="fr">
